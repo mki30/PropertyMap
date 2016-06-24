@@ -1,0 +1,42 @@
+﻿body{font-family:Arial;font-size:12px;margin: 0 auto;background:white}
+tr{background-color:White;}
+table{background-color:#c0c0c0;text-indent:3px;}
+input{background-color:#FFFFFF;}
+select{background-color:#FFFFFF;}
+
+.myclass 
+{
+    background-color:#ffd800;
+}
+
+
+.table-4 
+{
+	background-color: whiteSmoke;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.table-4 td 
+{
+	line-height: 10px;
+	color: #0084B4;
+    text-indent:0px;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid #fff;
+}
+
+.favhead
+{
+    text-align:left;
+    font-size:14px;
+}
+
+.phonelinks
+{
+    text-decoration:none;
+    color:#78bbed;
+}
+
+

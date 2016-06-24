@@ -1,0 +1,1567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PropertyListModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PropertyListModelStoreContainer">
+          <EntitySet Name="Agent" EntityType="PropertyListModel.Store.Agent" store:Type="Tables" />
+          <EntitySet Name="AgentClient" EntityType="PropertyListModel.Store.AgentClient" store:Type="Tables" />
+          <EntitySet Name="Apartment" EntityType="PropertyListModel.Store.Apartment" store:Type="Tables" />
+          <EntitySet Name="ApartmentType" EntityType="PropertyListModel.Store.ApartmentType" store:Type="Tables" />
+          <EntitySet Name="AsignClient" EntityType="PropertyListModel.Store.AsignClient" store:Type="Tables" />
+          <EntitySet Name="Availability" EntityType="PropertyListModel.Store.Availability" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="PropertyListModel.Store.City" store:Type="Tables" />
+          <EntitySet Name="ClientLinking" EntityType="PropertyListModel.Store.ClientLinking" store:Type="Tables" />
+          <EntitySet Name="Distance" EntityType="PropertyListModel.Store.Distance" store:Type="Tables" />
+          <EntitySet Name="FloorInfo" EntityType="PropertyListModel.Store.FloorInfo" store:Type="Tables" />
+          <EntitySet Name="ImagesDetails" EntityType="PropertyListModel.Store.ImagesDetails" store:Type="Tables" />
+          <EntitySet Name="Landmark" EntityType="PropertyListModel.Store.Landmark" store:Type="Tables" />
+          <EntitySet Name="NewsArticle" EntityType="PropertyListModel.Store.NewsArticle" store:Type="Tables" />
+          <EntitySet Name="PriceList" EntityType="PropertyListModel.Store.PriceList" store:Type="Tables" />
+          <EntitySet Name="PriceTrend" EntityType="PropertyListModel.Store.PriceTrend" store:Type="Tables" />
+          <EntitySet Name="ProjectPricing" EntityType="PropertyListModel.Store.ProjectPricing" store:Type="Tables" />
+          <EntitySet Name="ProjectQuestion" EntityType="PropertyListModel.Store.ProjectQuestion" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="PropertyListModel.Store.Service" store:Type="Tables" />
+          <EntitySet Name="Society" EntityType="PropertyListModel.Store.Society" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="AgentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AgentCompany" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNo1" Type="nvarchar" MaxLength="150" />
+          <Property Name="PhoneNo2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile2" Type="nvarchar" MaxLength="50" />
+          <Property Name="OperatingIn" Type="nvarchar" MaxLength="100" />
+          <Property Name="OperatingSince" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="DealsIn" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertiesHandled" Type="nvarchar" MaxLength="100" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="Mobile3" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="URL" Type="nvarchar" MaxLength="300" />
+          <Property Name="UserType" Type="int" />
+          <Property Name="City" Type="int" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="BuilderDescription" Type="nvarchar" />
+          <Property Name="SourceURL" Type="nvarchar" MaxLength="500" />
+          <Property Name="Varified" Type="int" />
+          <Property Name="Deleted" Type="int" />
+          <Property Name="URLName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="AgentClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="AgentID" Type="int" />
+        </EntityType>
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SocietyID" Type="int" />
+          <Property Name="ApartmentTypeID" Type="int" />
+          <Property Name="ApartmentNumber" Type="int" />
+          <Property Name="Block" Type="nvarchar" MaxLength="100" />
+          <Property Name="Floor" Type="int" />
+          <Property Name="Facing" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lifts" Type="int" />
+          <Property Name="Parking1" Type="int" />
+          <Property Name="Parking2" Type="int" />
+          <Property Name="PowerBackup" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="ServantRoom" Type="int" />
+          <Property Name="DirectionalFacing" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ApartmentType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SocietyID" Type="int" />
+          <Property Name="Bedroom" Type="int" />
+          <Property Name="Bathroom" Type="int" />
+          <Property Name="Balcony" Type="int" />
+          <Property Name="Area" Type="int" />
+          <Property Name="SuperArea" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherFeatures" Type="nvarchar" MaxLength="50" />
+          <Property Name="BSP" Type="int" />
+          <Property Name="BSP_Installments" Type="int" />
+          <Property Name="MaintenanceDep" Type="int" />
+          <Property Name="PowerBackupDep" Type="int" />
+          <Property Name="ParkingDep" Type="int" />
+          <Property Name="ClubDep" Type="int" />
+          <Property Name="PLC" Type="float" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="UseType" Type="int" />
+          <Property Name="PropertyType" Type="int" />
+          <Property Name="Unit" Type="int" />
+          <Property Name="PlotArea" Type="int" />
+        </EntityType>
+        <EntityType Name="AsignClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="AvlID" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="ClientID" Type="int" />
+          <Property Name="AgentID" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Availability">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="AvailabilityType" Type="int" />
+          <Property Name="SocietyID" Type="int" />
+          <Property Name="SellerType" Type="int" />
+          <Property Name="SellerID" Type="int" />
+          <Property Name="BHK" Type="int" />
+          <Property Name="Bathroom" Type="int" />
+          <Property Name="Balcony" Type="int" />
+          <Property Name="Area" Type="int" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="DateAvailableFrom" Type="datetime" />
+          <Property Name="FloorNo" Type="int" />
+          <Property Name="TotalFloors" Type="int" />
+          <Property Name="Facing" Type="nvarchar" MaxLength="100" />
+          <Property Name="AgeOfConstruction" Type="nvarchar" MaxLength="100" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="100" />
+          <Property Name="OwnershipType" Type="nvarchar" MaxLength="100" />
+          <Property Name="AvailableUnits" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="SellerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SellerEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="AdditionalRoom" Type="nvarchar" MaxLength="100" />
+          <Property Name="PlotArea" Type="int" />
+          <Property Name="CarpetArea" Type="int" />
+          <Property Name="DirectionalFacing" Type="nvarchar" MaxLength="100" />
+          <Property Name="PostedOnDate" Type="datetime" />
+          <Property Name="SocietyLocation" Type="nvarchar" MaxLength="200" />
+          <Property Name="DataSource" Type="nvarchar" MaxLength="100" />
+          <Property Name="DataSourceID" Type="nvarchar" MaxLength="100" />
+          <Property Name="SellerPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="SellerMobile1" Type="nvarchar" MaxLength="100" />
+          <Property Name="SellerMobile2" Type="nvarchar" MaxLength="100" />
+          <Property Name="SellerMobile3" Type="nvarchar" MaxLength="100" />
+          <Property Name="Furnishing" Type="nvarchar" MaxLength="100" />
+          <Property Name="SocietyName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="200" />
+          <Property Name="ApartmentTypeID" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="URL" Type="nvarchar" MaxLength="300" />
+          <Property Name="RentFor" Type="int" />
+          <Property Name="Deleted" Type="int" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="PolyPoints" Type="nvarchar" />
+          <Property Name="ZoomLevel" Type="int" />
+          <Property Name="ChildCount" Type="int" />
+          <Property Name="ChildSocietyCount" Type="int" />
+          <Property Name="SortName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CityGroup" Type="int" />
+          <Property Name="Verified" Type="int" />
+          <Property Name="Polygon" Type="image" />
+          <Property Name="WikimapiaID" Type="int" />
+          <Property Name="OSMID" Type="int" />
+          <Property Name="PolygonDataSize" Type="int" />
+          <Property Name="UrlName" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="ClientLinking">
+          <Key>
+            <PropertyRef Name="AgentID" />
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="AgentID" Type="int" Nullable="false" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+        </EntityType>
+        <EntityType Name="Distance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SocietyID" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="RoadDistance" Type="float" />
+          <Property Name="Time" Type="int" />
+          <Property Name="DrivingInstructions" Type="image" />
+          <Property Name="DataSize" Type="int" />
+          <Property Name="LatLng" Type="image" />
+          <Property Name="LatLngDataSize" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="LandmarkID" Type="int" />
+        </EntityType>
+        <EntityType Name="FloorInfo">
+          <Key>
+            <PropertyRef Name="AptTypeID" />
+            <PropertyRef Name="FloorNo" />
+          </Key>
+          <Property Name="AptTypeID" Type="int" Nullable="false" />
+          <Property Name="FloorNo" Type="int" Nullable="false" />
+          <Property Name="BuiltupArea" Type="int" />
+          <Property Name="Terrace" Type="int" />
+          <Property Name="Lawn" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="TotalArea" Type="int" />
+          <Property Name="FloorName" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="ImagesDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ReferenceID" Type="int" />
+          <Property Name="ImageReferenceType" Type="int" />
+          <Property Name="ImageID" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tags" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sequence" Type="int" />
+          <Property Name="Width" Type="float" />
+          <Property Name="Height" Type="float" />
+          <Property Name="SizeKb" Type="float" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="Format" Type="nvarchar" MaxLength="5" />
+          <Property Name="Data" Type="image" />
+          <Property Name="DataSize" Type="int" />
+          <Property Name="UrlName" Type="nvarchar" MaxLength="300" />
+          <Property Name="Tagline" Type="nvarchar" MaxLength="300" />
+          <Property Name="Courtesy" Type="nvarchar" MaxLength="100" />
+          <Property Name="Reference" Type="nvarchar" MaxLength="500" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+        </EntityType>
+        <EntityType Name="Landmark">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="LandmarkType" Type="nvarchar" MaxLength="100" />
+          <Property Name="LandmarkName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="ContNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NewsArticle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="SubcityID" Type="int" />
+          <Property Name="Header" Type="nvarchar" MaxLength="300" />
+          <Property Name="Details" Type="image" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="DetailsSize" Type="int" />
+        </EntityType>
+        <EntityType Name="PriceList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SocietyID" Type="int" />
+          <Property Name="ApartmentTypeID" Type="int" />
+          <Property Name="BSP" Type="int" />
+          <Property Name="BSP_Installments" Type="int" />
+          <Property Name="MaintenanceDep" Type="int" />
+          <Property Name="PowerBackupDep" Type="int" />
+          <Property Name="ParkingDep" Type="int" />
+          <Property Name="PLC" Type="float" />
+          <Property Name="ServiceTax_BSP" Type="float" />
+          <Property Name="ServiceTax_PLC" Type="float" />
+          <Property Name="ServiceTax_PowBak" Type="float" />
+          <Property Name="ServiceTax_Parking" Type="float" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+        </EntityType>
+        <EntityType Name="PriceTrend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="Subcity" Type="nvarchar" MaxLength="100" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Min" Type="int" />
+          <Property Name="Max" Type="int" />
+          <Property Name="PriceDate" Type="datetime" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="Quarter" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="SubCityID" Type="int" />
+        </EntityType>
+        <EntityType Name="ProjectPricing">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Value" Type="nvarchar" MaxLength="100" />
+          <Property Name="Type" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProjectQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="100" />
+          <Property Name="Question" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Answer" Type="nvarchar" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Approved" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="PageUrl" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+        </EntityType>
+        <EntityType Name="Society">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SocietyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="State" Type="nvarchar" MaxLength="100" />
+          <Property Name="Pin" Type="nvarchar" MaxLength="10" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" />
+          <Property Name="BuiltYear" Type="int" />
+          <Property Name="DistanceAirport" Type="int" />
+          <Property Name="DistaneRailStation" Type="int" />
+          <Property Name="DistanceBusStation" Type="int" />
+          <Property Name="DistanceHospital" Type="int" />
+          <Property Name="DistanceSchool" Type="int" />
+          <Property Name="PowerBackup" Type="int" />
+          <Property Name="DistanceShopping" Type="int" />
+          <Property Name="Total1BHK" Type="int" />
+          <Property Name="Total2BHK" Type="int" />
+          <Property Name="Total3BHK" Type="int" />
+          <Property Name="Total4BHK" Type="int" />
+          <Property Name="Total5BHK" Type="int" />
+          <Property Name="ForSale1BHK" Type="int" />
+          <Property Name="ForSale2BHK" Type="int" />
+          <Property Name="ForSale3BHK" Type="int" />
+          <Property Name="ForSale4BHK" Type="int" />
+          <Property Name="ForSale5BHK" Type="int" />
+          <Property Name="ForRent1BHK" Type="int" />
+          <Property Name="ForRent2BHK" Type="int" />
+          <Property Name="ForRent3BHK" Type="int" />
+          <Property Name="ForRent4BHK" Type="int" />
+          <Property Name="ForRent5BHK" Type="int" />
+          <Property Name="ForSaleAgent" Type="int" />
+          <Property Name="ForSaleOwner" Type="int" />
+          <Property Name="ForRentAgent" Type="int" />
+          <Property Name="ForRentOwner" Type="int" />
+          <Property Name="ObjectType" Type="int" />
+          <Property Name="LUDate" Type="datetime" />
+          <Property Name="LUBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="36" />
+          <Property Name="DirtyFlag" Type="int" />
+          <Property Name="Amenities" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="VedioLink" Type="nvarchar" MaxLength="1000" />
+          <Property Name="BuilderID" Type="int" />
+          <Property Name="Subcity" Type="nvarchar" MaxLength="200" />
+          <Property Name="PolyPoints" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Deleted" Type="int" />
+          <Property Name="Verified" Type="int" />
+          <Property Name="UseType" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="SubCityID" Type="int" />
+          <Property Name="Area" Type="nvarchar" MaxLength="100" />
+          <Property Name="AreaID" Type="int" />
+          <Property Name="URL" Type="nvarchar" MaxLength="250" />
+          <Property Name="URLName" Type="nvarchar" MaxLength="255" />
+          <Property Name="PropertyType" Type="int" />
+          <Property Name="BrochureURL" Type="nvarchar" MaxLength="250" />
+          <Property Name="DataSourceURL" Type="nvarchar" MaxLength="300" />
+          <Property Name="PricelistURL" Type="nvarchar" MaxLength="250" />
+          <Property Name="Town" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Impression" Type="int" />
+          <Property Name="AvgPos" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PropertyListModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PropertyListEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Apartments" EntityType="PropertyListModel.Apartment" />
+          <EntitySet Name="AgentClients" EntityType="PropertyListModel.AgentClient" />
+          <EntitySet Name="PriceLists" EntityType="PropertyListModel.PriceList" />
+          <EntitySet Name="Landmarks" EntityType="PropertyListModel.Landmark" />
+          <EntitySet Name="ApartmentTypes" EntityType="PropertyListModel.ApartmentType" />
+          <EntitySet Name="Societies" EntityType="PropertyListModel.Society" />
+          <EntitySet Name="PriceTrends" EntityType="PropertyListModel.PriceTrend" />
+          <EntitySet Name="Distances" EntityType="PropertyListModel.Distance" />
+          <EntitySet Name="Services" EntityType="PropertyListModel.Service" />
+          <EntitySet Name="Cities" EntityType="PropertyListModel.City" />
+          <EntitySet Name="FloorInfoes" EntityType="PropertyListModel.FloorInfo" />
+          <EntitySet Name="ClientLinkings" EntityType="PropertyListModel.ClientLinking" />
+          <EntitySet Name="NewsArticles" EntityType="PropertyListModel.NewsArticle" />
+          <EntitySet Name="AsignClients" EntityType="PropertyListModel.AsignClient" />
+          <EntitySet Name="Agents" EntityType="PropertyListModel.Agent" />
+          <EntitySet Name="Availabilities" EntityType="PropertyListModel.Availability" />
+          <EntitySet Name="ImagesDetails" EntityType="PropertyListModel.ImagesDetail" />
+          <EntitySet Name="ProjectQuestions" EntityType="PropertyListModel.ProjectQuestion" />
+          <EntitySet Name="ProjectPricings" EntityType="PropertyListModel.ProjectPricing" />
+        </EntityContainer>
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="SocietyID" />
+          <Property Type="Int32" Name="ApartmentTypeID" />
+          <Property Type="Int32" Name="ApartmentNumber" />
+          <Property Type="String" Name="Block" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Floor" />
+          <Property Type="String" Name="Facing" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Lifts" />
+          <Property Type="Int32" Name="Parking1" />
+          <Property Type="Int32" Name="Parking2" />
+          <Property Type="Int32" Name="PowerBackup" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="ServantRoom" />
+          <Property Type="String" Name="DirectionalFacing" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AgentClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileNo" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="AgentID" />
+        </EntityType>
+        <EntityType Name="PriceList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="SocietyID" />
+          <Property Type="Int32" Name="ApartmentTypeID" />
+          <Property Type="Int32" Name="BSP" />
+          <Property Type="Int32" Name="BSP_Installments" />
+          <Property Type="Int32" Name="MaintenanceDep" />
+          <Property Type="Int32" Name="PowerBackupDep" />
+          <Property Type="Int32" Name="ParkingDep" />
+          <Property Type="Double" Name="PLC" />
+          <Property Type="Double" Name="ServiceTax_BSP" />
+          <Property Type="Double" Name="ServiceTax_PLC" />
+          <Property Type="Double" Name="ServiceTax_PowBak" />
+          <Property Type="Double" Name="ServiceTax_Parking" />
+          <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+        </EntityType>
+        <EntityType Name="Landmark">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="LandmarkType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LandmarkName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Lat" />
+          <Property Type="Double" Name="Lng" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="String" Name="Website" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ApartmentType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="SocietyID" />
+          <Property Type="Int32" Name="Bedroom" />
+          <Property Type="Int32" Name="Bathroom" />
+          <Property Type="Int32" Name="Balcony" />
+          <Property Type="Int32" Name="Area" />
+          <Property Type="Int32" Name="SuperArea" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="String" Name="TypeName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OtherFeatures" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BSP" />
+          <Property Type="Int32" Name="BSP_Installments" />
+          <Property Type="Int32" Name="MaintenanceDep" />
+          <Property Type="Int32" Name="PowerBackupDep" />
+          <Property Type="Int32" Name="ParkingDep" />
+          <Property Type="Int32" Name="ClubDep" />
+          <Property Type="Double" Name="PLC" />
+          <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UseType" />
+          <Property Type="Int32" Name="PropertyType" />
+          <Property Type="Int32" Name="Unit" />
+          <Property Type="Int32" Name="PlotArea" />
+        </EntityType>
+        <EntityType Name="Society">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="SocietyName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Lat" />
+          <Property Type="Double" Name="Lng" />
+          <Property Type="String" Name="Address" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pin" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BuiltYear" />
+          <Property Type="Int32" Name="DistanceAirport" />
+          <Property Type="Int32" Name="DistaneRailStation" />
+          <Property Type="Int32" Name="DistanceBusStation" />
+          <Property Type="Int32" Name="DistanceHospital" />
+          <Property Type="Int32" Name="DistanceSchool" />
+          <Property Type="Int32" Name="PowerBackup" />
+          <Property Type="Int32" Name="DistanceShopping" />
+          <Property Type="Int32" Name="Total1BHK" />
+          <Property Type="Int32" Name="Total2BHK" />
+          <Property Type="Int32" Name="Total3BHK" />
+          <Property Type="Int32" Name="Total4BHK" />
+          <Property Type="Int32" Name="Total5BHK" />
+          <Property Type="Int32" Name="ForSale1BHK" />
+          <Property Type="Int32" Name="ForSale2BHK" />
+          <Property Type="Int32" Name="ForSale3BHK" />
+          <Property Type="Int32" Name="ForSale4BHK" />
+          <Property Type="Int32" Name="ForSale5BHK" />
+          <Property Type="Int32" Name="ForRent1BHK" />
+          <Property Type="Int32" Name="ForRent2BHK" />
+          <Property Type="Int32" Name="ForRent3BHK" />
+          <Property Type="Int32" Name="ForRent4BHK" />
+          <Property Type="Int32" Name="ForRent5BHK" />
+          <Property Type="Int32" Name="ForSaleAgent" />
+          <Property Type="Int32" Name="ForSaleOwner" />
+          <Property Type="Int32" Name="ForRentAgent" />
+          <Property Type="Int32" Name="ForRentOwner" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="String" Name="Amenities" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="StartDate" Precision="3" />
+          <Property Type="DateTime" Name="EndDate" Precision="3" />
+          <Property Type="String" Name="VedioLink" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="BuilderID" />
+          <Property Type="String" Name="Subcity" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PolyPoints" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Deleted" />
+          <Property Type="Int32" Name="Verified" />
+          <Property Type="Int32" Name="UseType" />
+          <Property Type="Int32" Name="CityID" />
+          <Property Type="Int32" Name="SubCityID" />
+          <Property Type="String" Name="Area" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AreaID" />
+          <Property Type="String" Name="URL" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URLName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PropertyType" />
+          <Property Type="String" Name="BrochureURL" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataSourceURL" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PricelistURL" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Town" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="Int32" Name="Impression" />
+          <Property Type="Int32" Name="AvgPos" />
+        </EntityType>
+        <EntityType Name="PriceTrend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Subcity" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Min" />
+          <Property Type="Int32" Name="Max" />
+          <Property Type="DateTime" Name="PriceDate" Precision="3" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="Quarter" />
+          <Property Type="Int32" Name="Year" />
+          <Property Type="Int32" Name="CityID" />
+          <Property Type="Int32" Name="SubCityID" />
+        </EntityType>
+        <EntityType Name="Distance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="SocietyID" />
+          <Property Type="Int32" Name="Type" />
+          <Property Type="String" Name="Code" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="RoadDistance" />
+          <Property Type="Int32" Name="Time" />
+          <Property Type="Binary" Name="DrivingInstructions" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="DataSize" />
+          <Property Type="Binary" Name="LatLng" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="LatLngDataSize" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="LandmarkID" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="Type" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contact" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Lat" />
+          <Property Type="Double" Name="Lng" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ParentID" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Lat" />
+          <Property Type="Double" Name="Lng" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="String" Name="PolyPoints" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ZoomLevel" />
+          <Property Type="Int32" Name="ChildCount" />
+          <Property Type="Int32" Name="ChildSocietyCount" />
+          <Property Type="String" Name="SortName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CityGroup" />
+          <Property Type="Int32" Name="Verified" />
+          <Property Type="Binary" Name="Polygon" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="WikimapiaID" />
+          <Property Type="Int32" Name="OSMID" />
+          <Property Type="Int32" Name="PolygonDataSize" />
+          <Property Type="String" Name="UrlName" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FloorInfo">
+          <Key>
+            <PropertyRef Name="AptTypeID" />
+            <PropertyRef Name="FloorNo" />
+          </Key>
+          <Property Type="Int32" Name="AptTypeID" Nullable="false" />
+          <Property Type="Int32" Name="FloorNo" Nullable="false" />
+          <Property Type="Int32" Name="BuiltupArea" />
+          <Property Type="Int32" Name="Terrace" />
+          <Property Type="Int32" Name="Lawn" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="TotalArea" />
+          <Property Type="String" Name="FloorName" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClientLinking">
+          <Key>
+            <PropertyRef Name="AgentID" />
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Type="Int32" Name="AgentID" Nullable="false" />
+          <Property Type="Int32" Name="ClientID" Nullable="false" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+        </EntityType>
+        <EntityType Name="NewsArticle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="CityID" />
+          <Property Type="Int32" Name="SubcityID" />
+          <Property Type="String" Name="Header" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Details" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="DetailsSize" />
+        </EntityType>
+        <EntityType Name="AsignClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="AvlID" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Int32" Name="ClientID" />
+          <Property Type="Int32" Name="AgentID" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="AgentName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AgentCompany" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNo1" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNo2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OperatingIn" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="OperatingSince" />
+          <Property Type="String" Name="Address" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DealsIn" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PropertiesHandled" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="Double" Name="Lat" />
+          <Property Type="Double" Name="Lng" />
+          <Property Type="String" Name="Mobile3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URL" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UserType" />
+          <Property Type="Int32" Name="City" />
+          <Property Type="String" Name="UserID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BuilderDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceURL" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Varified" />
+          <Property Type="Int32" Name="Deleted" />
+          <Property Type="String" Name="URLName" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Availability">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="AvailabilityType" />
+          <Property Type="Int32" Name="SocietyID" />
+          <Property Type="Int32" Name="SellerType" />
+          <Property Type="Int32" Name="SellerID" />
+          <Property Type="Int32" Name="BHK" />
+          <Property Type="Int32" Name="Bathroom" />
+          <Property Type="Int32" Name="Balcony" />
+          <Property Type="Int32" Name="Area" />
+          <Property Type="Int32" Name="Amount" />
+          <Property Type="DateTime" Name="DateAvailableFrom" Precision="3" />
+          <Property Type="Int32" Name="FloorNo" />
+          <Property Type="Int32" Name="TotalFloors" />
+          <Property Type="String" Name="Facing" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AgeOfConstruction" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TransactionType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OwnershipType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AvailableUnits" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="String" Name="SellerName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SellerEmail" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdditionalRoom" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PlotArea" />
+          <Property Type="Int32" Name="CarpetArea" />
+          <Property Type="String" Name="DirectionalFacing" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PostedOnDate" Precision="3" />
+          <Property Type="String" Name="SocietyLocation" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataSource" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DataSourceID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SellerPhone" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SellerMobile1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SellerMobile2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SellerMobile3" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Furnishing" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SocietyName" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Company" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Owner" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ApartmentTypeID" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URL" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RentFor" />
+          <Property Type="Int32" Name="Deleted" />
+        </EntityType>
+        <EntityType Name="ImagesDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ReferenceID" />
+          <Property Type="Int32" Name="ImageReferenceType" />
+          <Property Type="String" Name="ImageID" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tags" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Sequence" />
+          <Property Type="Double" Name="Width" />
+          <Property Type="Double" Name="Height" />
+          <Property Type="Double" Name="SizeKb" />
+          <Property Type="Double" Name="Lat" />
+          <Property Type="Double" Name="Lng" />
+          <Property Type="String" Name="Format" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Data" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="DataSize" />
+          <Property Type="String" Name="UrlName" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tagline" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Courtesy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Reference" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+        </EntityType>
+        <EntityType Name="ProjectQuestion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ProjectID" />
+          <Property Type="String" Name="Subject" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Question" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Answer" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Approved" />
+          <Property Type="Int32" Name="ObjectType" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineID" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DirtyFlag" />
+          <Property Type="String" Name="PageUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProjectPricing">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ProjectID" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Type" />
+          <Property Type="DateTime" Name="LUDate" Precision="3" />
+          <Property Type="String" Name="LUBy" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PropertyListModelStoreContainer" CdmEntityContainer="PropertyListEntities">
+          <EntitySetMapping Name="Apartments">
+            <EntityTypeMapping TypeName="PropertyListModel.Apartment">
+              <MappingFragment StoreEntitySet="Apartment">
+                <ScalarProperty Name="DirectionalFacing" ColumnName="DirectionalFacing" />
+                <ScalarProperty Name="ServantRoom" ColumnName="ServantRoom" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="PowerBackup" ColumnName="PowerBackup" />
+                <ScalarProperty Name="Parking2" ColumnName="Parking2" />
+                <ScalarProperty Name="Parking1" ColumnName="Parking1" />
+                <ScalarProperty Name="Lifts" ColumnName="Lifts" />
+                <ScalarProperty Name="Facing" ColumnName="Facing" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="Block" ColumnName="Block" />
+                <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+                <ScalarProperty Name="ApartmentTypeID" ColumnName="ApartmentTypeID" />
+                <ScalarProperty Name="SocietyID" ColumnName="SocietyID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentClients">
+            <EntityTypeMapping TypeName="PropertyListModel.AgentClient">
+              <MappingFragment StoreEntitySet="AgentClient">
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceLists">
+            <EntityTypeMapping TypeName="PropertyListModel.PriceList">
+              <MappingFragment StoreEntitySet="PriceList">
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ServiceTax_Parking" ColumnName="ServiceTax_Parking" />
+                <ScalarProperty Name="ServiceTax_PowBak" ColumnName="ServiceTax_PowBak" />
+                <ScalarProperty Name="ServiceTax_PLC" ColumnName="ServiceTax_PLC" />
+                <ScalarProperty Name="ServiceTax_BSP" ColumnName="ServiceTax_BSP" />
+                <ScalarProperty Name="PLC" ColumnName="PLC" />
+                <ScalarProperty Name="ParkingDep" ColumnName="ParkingDep" />
+                <ScalarProperty Name="PowerBackupDep" ColumnName="PowerBackupDep" />
+                <ScalarProperty Name="MaintenanceDep" ColumnName="MaintenanceDep" />
+                <ScalarProperty Name="BSP_Installments" ColumnName="BSP_Installments" />
+                <ScalarProperty Name="BSP" ColumnName="BSP" />
+                <ScalarProperty Name="ApartmentTypeID" ColumnName="ApartmentTypeID" />
+                <ScalarProperty Name="SocietyID" ColumnName="SocietyID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Landmarks">
+            <EntityTypeMapping TypeName="PropertyListModel.Landmark">
+              <MappingFragment StoreEntitySet="Landmark">
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="ContNo" ColumnName="ContNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="LandmarkName" ColumnName="LandmarkName" />
+                <ScalarProperty Name="LandmarkType" ColumnName="LandmarkType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApartmentTypes">
+            <EntityTypeMapping TypeName="PropertyListModel.ApartmentType">
+              <MappingFragment StoreEntitySet="ApartmentType">
+                <ScalarProperty Name="PlotArea" ColumnName="PlotArea" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
+                <ScalarProperty Name="UseType" ColumnName="UseType" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PLC" ColumnName="PLC" />
+                <ScalarProperty Name="ClubDep" ColumnName="ClubDep" />
+                <ScalarProperty Name="ParkingDep" ColumnName="ParkingDep" />
+                <ScalarProperty Name="PowerBackupDep" ColumnName="PowerBackupDep" />
+                <ScalarProperty Name="MaintenanceDep" ColumnName="MaintenanceDep" />
+                <ScalarProperty Name="BSP_Installments" ColumnName="BSP_Installments" />
+                <ScalarProperty Name="BSP" ColumnName="BSP" />
+                <ScalarProperty Name="OtherFeatures" ColumnName="OtherFeatures" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SuperArea" ColumnName="SuperArea" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Balcony" ColumnName="Balcony" />
+                <ScalarProperty Name="Bathroom" ColumnName="Bathroom" />
+                <ScalarProperty Name="Bedroom" ColumnName="Bedroom" />
+                <ScalarProperty Name="SocietyID" ColumnName="SocietyID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Societies">
+            <EntityTypeMapping TypeName="PropertyListModel.Society">
+              <MappingFragment StoreEntitySet="Society">
+                <ScalarProperty Name="AvgPos" ColumnName="AvgPos" />
+                <ScalarProperty Name="Impression" ColumnName="Impression" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="PricelistURL" ColumnName="PricelistURL" />
+                <ScalarProperty Name="DataSourceURL" ColumnName="DataSourceURL" />
+                <ScalarProperty Name="BrochureURL" ColumnName="BrochureURL" />
+                <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
+                <ScalarProperty Name="URLName" ColumnName="URLName" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="SubCityID" ColumnName="SubCityID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="UseType" ColumnName="UseType" />
+                <ScalarProperty Name="Verified" ColumnName="Verified" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="PolyPoints" ColumnName="PolyPoints" />
+                <ScalarProperty Name="Subcity" ColumnName="Subcity" />
+                <ScalarProperty Name="BuilderID" ColumnName="BuilderID" />
+                <ScalarProperty Name="VedioLink" ColumnName="VedioLink" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amenities" ColumnName="Amenities" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="ForRentOwner" ColumnName="ForRentOwner" />
+                <ScalarProperty Name="ForRentAgent" ColumnName="ForRentAgent" />
+                <ScalarProperty Name="ForSaleOwner" ColumnName="ForSaleOwner" />
+                <ScalarProperty Name="ForSaleAgent" ColumnName="ForSaleAgent" />
+                <ScalarProperty Name="ForRent5BHK" ColumnName="ForRent5BHK" />
+                <ScalarProperty Name="ForRent4BHK" ColumnName="ForRent4BHK" />
+                <ScalarProperty Name="ForRent3BHK" ColumnName="ForRent3BHK" />
+                <ScalarProperty Name="ForRent2BHK" ColumnName="ForRent2BHK" />
+                <ScalarProperty Name="ForRent1BHK" ColumnName="ForRent1BHK" />
+                <ScalarProperty Name="ForSale5BHK" ColumnName="ForSale5BHK" />
+                <ScalarProperty Name="ForSale4BHK" ColumnName="ForSale4BHK" />
+                <ScalarProperty Name="ForSale3BHK" ColumnName="ForSale3BHK" />
+                <ScalarProperty Name="ForSale2BHK" ColumnName="ForSale2BHK" />
+                <ScalarProperty Name="ForSale1BHK" ColumnName="ForSale1BHK" />
+                <ScalarProperty Name="Total5BHK" ColumnName="Total5BHK" />
+                <ScalarProperty Name="Total4BHK" ColumnName="Total4BHK" />
+                <ScalarProperty Name="Total3BHK" ColumnName="Total3BHK" />
+                <ScalarProperty Name="Total2BHK" ColumnName="Total2BHK" />
+                <ScalarProperty Name="Total1BHK" ColumnName="Total1BHK" />
+                <ScalarProperty Name="DistanceShopping" ColumnName="DistanceShopping" />
+                <ScalarProperty Name="PowerBackup" ColumnName="PowerBackup" />
+                <ScalarProperty Name="DistanceSchool" ColumnName="DistanceSchool" />
+                <ScalarProperty Name="DistanceHospital" ColumnName="DistanceHospital" />
+                <ScalarProperty Name="DistanceBusStation" ColumnName="DistanceBusStation" />
+                <ScalarProperty Name="DistaneRailStation" ColumnName="DistaneRailStation" />
+                <ScalarProperty Name="DistanceAirport" ColumnName="DistanceAirport" />
+                <ScalarProperty Name="BuiltYear" ColumnName="BuiltYear" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Pin" ColumnName="Pin" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceTrends">
+            <EntityTypeMapping TypeName="PropertyListModel.PriceTrend">
+              <MappingFragment StoreEntitySet="PriceTrend">
+                <ScalarProperty Name="SubCityID" ColumnName="SubCityID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Quarter" ColumnName="Quarter" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="PriceDate" ColumnName="PriceDate" />
+                <ScalarProperty Name="Max" ColumnName="Max" />
+                <ScalarProperty Name="Min" ColumnName="Min" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Subcity" ColumnName="Subcity" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distances">
+            <EntityTypeMapping TypeName="PropertyListModel.Distance">
+              <MappingFragment StoreEntitySet="Distance">
+                <ScalarProperty Name="LandmarkID" ColumnName="LandmarkID" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="LatLngDataSize" ColumnName="LatLngDataSize" />
+                <ScalarProperty Name="LatLng" ColumnName="LatLng" />
+                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+                <ScalarProperty Name="DrivingInstructions" ColumnName="DrivingInstructions" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="RoadDistance" ColumnName="RoadDistance" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SocietyID" ColumnName="SocietyID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="PropertyListModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="PropertyListModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+                <ScalarProperty Name="PolygonDataSize" ColumnName="PolygonDataSize" />
+                <ScalarProperty Name="OSMID" ColumnName="OSMID" />
+                <ScalarProperty Name="WikimapiaID" ColumnName="WikimapiaID" />
+                <ScalarProperty Name="Polygon" ColumnName="Polygon" />
+                <ScalarProperty Name="Verified" ColumnName="Verified" />
+                <ScalarProperty Name="CityGroup" ColumnName="CityGroup" />
+                <ScalarProperty Name="SortName" ColumnName="SortName" />
+                <ScalarProperty Name="ChildSocietyCount" ColumnName="ChildSocietyCount" />
+                <ScalarProperty Name="ChildCount" ColumnName="ChildCount" />
+                <ScalarProperty Name="ZoomLevel" ColumnName="ZoomLevel" />
+                <ScalarProperty Name="PolyPoints" ColumnName="PolyPoints" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FloorInfoes">
+            <EntityTypeMapping TypeName="PropertyListModel.FloorInfo">
+              <MappingFragment StoreEntitySet="FloorInfo">
+                <ScalarProperty Name="FloorName" ColumnName="FloorName" />
+                <ScalarProperty Name="TotalArea" ColumnName="TotalArea" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Lawn" ColumnName="Lawn" />
+                <ScalarProperty Name="Terrace" ColumnName="Terrace" />
+                <ScalarProperty Name="BuiltupArea" ColumnName="BuiltupArea" />
+                <ScalarProperty Name="FloorNo" ColumnName="FloorNo" />
+                <ScalarProperty Name="AptTypeID" ColumnName="AptTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientLinkings">
+            <EntityTypeMapping TypeName="PropertyListModel.ClientLinking">
+              <MappingFragment StoreEntitySet="ClientLinking">
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsArticles">
+            <EntityTypeMapping TypeName="PropertyListModel.NewsArticle">
+              <MappingFragment StoreEntitySet="NewsArticle">
+                <ScalarProperty Name="DetailsSize" ColumnName="DetailsSize" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="SubcityID" ColumnName="SubcityID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsignClients">
+            <EntityTypeMapping TypeName="PropertyListModel.AsignClient">
+              <MappingFragment StoreEntitySet="AsignClient">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="AvlID" ColumnName="AvlID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agents">
+            <EntityTypeMapping TypeName="PropertyListModel.Agent">
+              <MappingFragment StoreEntitySet="Agent">
+                <ScalarProperty Name="URLName" ColumnName="URLName" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Varified" ColumnName="Varified" />
+                <ScalarProperty Name="SourceURL" ColumnName="SourceURL" />
+                <ScalarProperty Name="BuilderDescription" ColumnName="BuilderDescription" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Mobile3" ColumnName="Mobile3" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="PropertiesHandled" ColumnName="PropertiesHandled" />
+                <ScalarProperty Name="DealsIn" ColumnName="DealsIn" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="OperatingSince" ColumnName="OperatingSince" />
+                <ScalarProperty Name="OperatingIn" ColumnName="OperatingIn" />
+                <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+                <ScalarProperty Name="Mobile1" ColumnName="Mobile1" />
+                <ScalarProperty Name="PhoneNo2" ColumnName="PhoneNo2" />
+                <ScalarProperty Name="PhoneNo1" ColumnName="PhoneNo1" />
+                <ScalarProperty Name="AgentCompany" ColumnName="AgentCompany" />
+                <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Availabilities">
+            <EntityTypeMapping TypeName="PropertyListModel.Availability">
+              <MappingFragment StoreEntitySet="Availability">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="RentFor" ColumnName="RentFor" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ApartmentTypeID" ColumnName="ApartmentTypeID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+                <ScalarProperty Name="Furnishing" ColumnName="Furnishing" />
+                <ScalarProperty Name="SellerMobile3" ColumnName="SellerMobile3" />
+                <ScalarProperty Name="SellerMobile2" ColumnName="SellerMobile2" />
+                <ScalarProperty Name="SellerMobile1" ColumnName="SellerMobile1" />
+                <ScalarProperty Name="SellerPhone" ColumnName="SellerPhone" />
+                <ScalarProperty Name="DataSourceID" ColumnName="DataSourceID" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="SocietyLocation" ColumnName="SocietyLocation" />
+                <ScalarProperty Name="PostedOnDate" ColumnName="PostedOnDate" />
+                <ScalarProperty Name="DirectionalFacing" ColumnName="DirectionalFacing" />
+                <ScalarProperty Name="CarpetArea" ColumnName="CarpetArea" />
+                <ScalarProperty Name="PlotArea" ColumnName="PlotArea" />
+                <ScalarProperty Name="AdditionalRoom" ColumnName="AdditionalRoom" />
+                <ScalarProperty Name="SellerEmail" ColumnName="SellerEmail" />
+                <ScalarProperty Name="SellerName" ColumnName="SellerName" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="AvailableUnits" ColumnName="AvailableUnits" />
+                <ScalarProperty Name="OwnershipType" ColumnName="OwnershipType" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="AgeOfConstruction" ColumnName="AgeOfConstruction" />
+                <ScalarProperty Name="Facing" ColumnName="Facing" />
+                <ScalarProperty Name="TotalFloors" ColumnName="TotalFloors" />
+                <ScalarProperty Name="FloorNo" ColumnName="FloorNo" />
+                <ScalarProperty Name="DateAvailableFrom" ColumnName="DateAvailableFrom" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Balcony" ColumnName="Balcony" />
+                <ScalarProperty Name="Bathroom" ColumnName="Bathroom" />
+                <ScalarProperty Name="BHK" ColumnName="BHK" />
+                <ScalarProperty Name="SellerID" ColumnName="SellerID" />
+                <ScalarProperty Name="SellerType" ColumnName="SellerType" />
+                <ScalarProperty Name="SocietyID" ColumnName="SocietyID" />
+                <ScalarProperty Name="AvailabilityType" ColumnName="AvailabilityType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImagesDetails">
+            <EntityTypeMapping TypeName="PropertyListModel.ImagesDetail">
+              <MappingFragment StoreEntitySet="ImagesDetails">
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Courtesy" ColumnName="Courtesy" />
+                <ScalarProperty Name="Tagline" ColumnName="Tagline" />
+                <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Format" ColumnName="Format" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="SizeKb" ColumnName="SizeKb" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ImageReferenceType" ColumnName="ImageReferenceType" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectQuestions">
+            <EntityTypeMapping TypeName="PropertyListModel.ProjectQuestion">
+              <MappingFragment StoreEntitySet="ProjectQuestion">
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="DirtyFlag" ColumnName="DirtyFlag" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectPricings">
+            <EntityTypeMapping TypeName="PropertyListModel.ProjectPricing">
+              <MappingFragment StoreEntitySet="ProjectPricing">
+                <ScalarProperty Name="LUBy" ColumnName="LUBy" />
+                <ScalarProperty Name="LUDate" ColumnName="LUDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="2fdc09f066f14b41981876db71d15cc0" Name="Diagram1">
+        <EntityTypeShape EntityType="PropertyListModel.Property" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Apartment" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Availability" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Builder" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Owner" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.User" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.AgentClient" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.AsignClient" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Block" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.PriceList" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Landmark" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Agent" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.ApartmentType" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Society" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.PriceTrend" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Distance" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.Service" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.City" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.ProjData" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyListModel.ProjPriceDetail" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

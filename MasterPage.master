@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html >
+<!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]>      <html class="no-js ie ie9 lte9>" lang="en-US"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+<head runat="server">
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="PropertyMap.info - Real estate information in india" />
+    <meta name="keywords" />
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <%--<script type="text/javascript" src="/js/jquery-ui-1.10.3.custom.min.js"></script>--%>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <%--<script type="text/javascript" src='/bootstrap/js/bootstrap.min.js'></script>--%>
+    <script type="text/javascript" src='//bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
+    <script type="text/javascript" src='/js/cmp/PropertyMap.js'></script>
+    
+    <link id="Favocon" runat="server" rel="icon" href="Images/shortcut.png" />
+    <%--<link href="/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">--%>
+    <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link href="/css/PropertyMap.css" rel="stylesheet" type="text/css" />
+    <%--<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="//www.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/docs.css" rel="stylesheet"/>
+    
+    <style type="text/css">
+        h1{font-size:30px;}
+        h2{font-size:25px;}
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="/">Property Map</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="Home"><a href="/"><i class="icon-home icon-inverse"></i>Home</a></li>
+                            <li class="emi"><a href="/EMI-EquatedMonthlyInstallment"><i class="icon-th icon-inverse"></i>EMI</a></li>
+                            <li class="loan"><a href='/Loan'><i class="icon-briefcase icon-inverse"></i>Loan</a> </li>
+                            <li class="map"><a href='/map'><span><i class="icon-map-marker icon-inverse"></i>Map</span></a> </li>
+                            <li class="PriceTrend"><a href='/price-trend/'><i class=" icon-signal icon-inverse"></i>Price Trends</a></li>
+                            <li class="qa"><a href='/PropertyQuestionAnswer'><i class="icon-question-sign icon-inverse"></i>Q&A</a> </li>
+                            <li class="documents"><a href='/PropertyDocuments'><i class="icon-file icon-inverse"></i>Documents</a></li>
+                            <li class="blogs"><a href='/blogs'><i class="icon-list-alt"></i>Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding-top: 0px;">
+            <div id="divSearchedResult" class="span6" style="z-index: 1000; display: none"></div>
+            <div style="height: 60px;" class="visible-desktop"></div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        <div id="footer">
+            <div class="container">
+                    <p class="muted credit;">© PropertyMap 2014</p>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var BasePath = '<%=ResolveClientUrl("~/")%>'
+    </script>
+    
+    <script type="text/javascript">     //google analytic script
+         var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36273739-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function ()
+        {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+﻿body {
+    background: url("../images/main-bg.gif") repeat scroll center top transparent;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+    margin: 0 auto;
+}
+TR {
+    background-color: White;
+}
+TABLE {
+    background-color: #C0C0C0;
+    text-indent: 3px;
+}
+.tableBorder td {
+    border-right: 1px solid #CCCCCC;
+}
+.footer {
+    font-family: Verdana;
+    font-size: 10px;
+    width: 770px;
+}
+.footer A {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.boderLeft {
+    border-left: 1px solid #CCCCCC;
+    width: 12px;
+}
+.Content {
+    border-bottom: 1px solid #A6C9E2;
+}
+.Content2 {
+    border-bottom: 1px solid #A6C9E2;
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    text-indent: 0;
+    width: 770px;
+}
+.Content3 {
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    text-indent: 0;
+    width: 770px;
+}
+.SearchStations tr {
+    background-color: #ADD1FF;
+}
+a {
+    color: #000099;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
+.tagNumber {
+    background-color: #FFFFFF;
+    color: #FD5722;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    text-align: left;
+    text-indent: 0;
+    width: 8px;
+}
+INPUT {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    font-size: 12px;
+}
+#divCalender {
+    background-color: #FFFFFF;
+    height: 153px;
+    left: 513px;
+    position: absolute;
+    text-align: center;
+    top: 119px;
+    visibility: hidden;
+    width: 100px;
+    z-index: 140;
+}
+p {
+    background-color: inherit;
+    color: #FFFFFF;
+    font-family: Arial,sans-serif;
+    font-size: 11px;
+    line-height: 130%;
+    margin: 10px;
+    text-align: justify;
+}
+#tableTop {
+    width: 770px;
+}
+#tableTop td {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+#tdHeadLeft {
+    border-bottom: 1px solid #A6C9E2;
+}
+.ButtonOutter {
+    border-bottom: 1px solid #404040;
+    border-top: 1px solid #FFFFFF;
+}
+.ButtonInner {
+    border-bottom: 1px solid #808080;
+}
+#tableSelection td {
+    background-color: #ADD1FF;
+}
+#tableSelection tr {
+    background-color: #ADD1FF;
+}
+#tableSelectionMiddle td {
+    background-color: #ADD1FF;
+}
+select {
+    background-color: #FFFFFF;
+    font-size: 11px;
+}
+#tooltip {
+    background-image: url("../images/callout.png");
+    background-repeat: no-repeat;
+    height: 117px;
+    padding: 50px 20px 20px;
+    position: absolute;
+    visibility: hidden;
+    width: 250px;
+    z-index: 3000;
+}
+#tooltip h3, #tooltip div {
+    margin: 0;
+}
+ul {
+    padding-left: 20px;
+}
+.MainContent {
+    background-color: white;
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    height: 100%;
+    margin: auto;
+    text-indent: 0;
+    width: 770px;
+}
+.AdminNote {
+    background-color: #FFCFCF;
+    color: Red;
+    font-weight: bolder;
+    margin-left: 3px;
+}
+.tableStationSelector {
+    background-color: #EFF7FF;
+    margin: 10px;
+    width: 740px;
+}
+#divExtraInfo td, .tableStationSelector td {
+    background-color: #EFF7FF;
+}
+.Steps {
+    vertical-align: top;
+    width: 3px;
+}
+.Steps2 {
+    border-left: 1px solid #CCCCCC;
+    vertical-align: top;
+    width: 3px;
+}
+.BackColor2 {
+    background-color: #EFF7FF;
+}

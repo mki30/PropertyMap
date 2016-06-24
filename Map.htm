@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="sim/kinetic-v4.0.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="sim/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="js/QueryString.js"></script>
+    <script type="text/javascript" src="js/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="js/markerwithlabel_packed.js"></script>
+    <script type="text/javascript">
+
+        var geocoder, map, PosMarker;
+        var PolyList = new Array();
+        var SelectedPoly = null;
+        var PojectList = null;
+
+        var Lat = 28.6355845045388, Lng = 77.364169974778, Zoom = 18, ID = 0;
+
+        function MyPoly(index,ID)
+        {
+            var self = this;
+            this.index = index;
+            this.ID = ID;
+            
+            this.path = new google.maps.MVCArray;
+
+            this.poly = new google.maps.Polygon({
+                strokeWeight: 3,
+                fillColor: '#5555FF',
+                //editable: true
+             });
+
+            this.poly.setMap(map);
+            this.poly.setPaths(new google.maps.MVCArray([this.path]));
+
+            google.maps.event.addListener(this.poly, "click", function (event)
+            {
+                if (Ctrl)
+                    SelectPoly(self.index);
+            });
+
+            //google.maps.event.addListener(this.path, 'insert_at', function ()
+            //{
+            //    SendPointToParent();
+            //});
+            //google.maps.event.addListener(this.path, 'remove_at', function ()
+            //{
+            //    SendPointToParent();
+            //});
+            //google.maps.event.addListener(this.path, 'set_at', function ()
+            //{
+            //    SendPointToParent();
+            //});
+         }
+
+        MyPoly.prototype.setVisible = function (flag)
+        {
+            this.poly.setVisible(flag);
+        }
+
+        MyPoly.prototype.FitToMap = function ()
+        {
+            var bounds = new google.maps.LatLngBounds();
+
+            this.path.forEach(function (element)
+            {
+                var ToPt = new google.maps.LatLng(element.lat(), element.lng());
+                bounds.extend(ToPt);
+            });
+            map.fitBounds(bounds);
+        }
+
+        MyPoly.prototype.Reset = function ()
+        {
+            this.path.clear();
+        }
+
+        MyPoly.prototype.BuildPoly = function (Data)
+        {
+            var self = this;
+
+            if (Data == "" || !Data)
+                return;
+
+            var LatLng = Data.split('^');
+            this.path.clear();
+            $(LatLng).each(function ()
+            {
+                if (this == "")
+                    return;
+
+                var pts = this.split(',');
+                var ToPt = new google.maps.LatLng(parseFloat(pts[0]), parseFloat(pts[1]));
+                self.AddPathPoint(ToPt);
+            });
+            return false;
+        }
+
+        MyPoly.prototype.AddPathPoint = function (LatLng)
+        {
+            this.path.insertAt(this.path.length, LatLng);
+        }
+
+        MyPoly.prototype.AddPoint = function (event)
+        {
+            var Lat = event.latLng.lat();
+            var Lng = event.latLng.lng();
+            var Pt = new google.maps.LatLng(Lat, Lng);
+
+            $("#txtLat").val(Lat);
+            $("#txtLng").val(Lng);
+
+            if ($("#chkCreateArea").prop("checked"))
+                this.AddPathPoint(Pt);
+            else
+                PosMarker.setPosition(Pt);
+        }
+
+        MyPoly.prototype.GetPolyData = function ()
+        {
+            var str = "";
+
+            this.path.forEach(function (element)
+            {
+                str += element.lat() + "," + element.lng() + "^";
+            });
+            return str;
+        }
+
+        function SelectPoly(index)
+        {
+            if (index >= 0 && index < PolyList.length)
+            {
+                SelectedPoly = PolyList[index];
+                $(PolyList).each(function ()
+                {
+                    this.poly.setOptions({ fillColor: '#5555FF', editable: false, strokeWeight: 1 });
+                });
+
+                SelectedPoly.poly.setOptions({ fillColor: '#FFFF00', editable: true, strokeWeight: 3 });
+
+                var P = PojectList[index];
+
+                $("#txtAddress").val(P.SocietyName + "," + P.Subcity + "," + P.City + ", India");
+                $("#txtLat").val(P.Lat);
+                $("#txtLng").val(P.Lng);
+            }
+        }
+
+        $(window).resize(Resized);
+
+        $(document).ready(function ()
+        {
+            Resized();
+
+            var q = new QueryString();
+            q.read();
+
+            Lat = q.getQueryString("Lat");
+
+            if (!Lat)
+                Lat = 21.861498734372567;
+
+            Lng = q.getQueryString("Lng");
+
+            if (!Lng)
+                Lng = 78.2666015625;
+
+            Zoom = parseInt(q.getQueryString("Zoom"));
+            ID = parseInt(q.getQueryString("ID"));
+            SubCityID = parseInt(q.getQueryString("SubCityId"));
+
+            if (!Zoom)
+                Zoom = 18;
+
+            initialize();
+
+            if (Lat != 0 && Lat != "" && Lng != 0 && Lng != "")
+            {
+                SetCenter(Lat, Lng);
+                SetZoom(Zoom);
+            }
+
+            LoadFromServer(ID);
+
+            DrawPoly();
+        });
+
+        function DrawPoly()
+        {
+            try
+            {
+                BuildPoly(parent.GetPolyPoints());
+            }
+            catch (e) { }
+
+        }
+
+        function SetZoom(Zoom)
+        {
+            map.setZoom(parseInt(Zoom));
+        }
+
+        function initialize()
+        {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(Lat, Lng);
+            var myOptions = { zoom: Zoom, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP, scaleControl: false }
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            PosMarker = new google.maps.Marker({ map: map, position: latlng });
+            google.maps.event.addListener(map, 'click', function (event)
+            {
+                if (SelectedPoly)
+                    SelectedPoly.AddPoint(event);
+
+            });     //Update Marker on Click
+        }
+
+        function SendPointToParent()
+        {
+            try
+            {
+                if (SelectedPoly)
+                    parent.UpdatePolyPoints(SelectedPoly.GetPolyData());
+            }
+            catch (e)
+            {
+
+            }
+        }
+
+        function LoadFromServer(ProjectID)
+        {
+            if (!ProjectID)
+                return;
+
+            PolyList.length = 0;
+
+            $.ajax({
+                url:"Data.aspx?Action=GetAllProjectDetailJson&Data1=" + ProjectID, cache: false, success:
+                    function (Data)
+                    {
+                        PojectList = JSON.parse(Data);
+                        var SelectedIndex = -1;
+
+                        $(PojectList).each(function (index)
+                        {
+                            PolyList[index] = new MyPoly(index, this.ID);
+                            PolyList[index].BuildPoly(this.PolyPoints);
+
+                            if (this.ID == ProjectID)
+                            {
+                                SelectedIndex = index;
+                                console.log(this.Lat, this.Lng);
+                                PolyList[index].FitToMap();
+                                SetCenter(this.Lat, this.Lng);
+                                SetZoom(16);
+                            }
+                        });
+
+                        SelectPoly(SelectedIndex);
+                        
+                    }
+            });
+        }
+
+        function SaveOnServer()
+        {
+            $.post("Data.aspx?Action=UpdateSocietyPoly&Password=2012&Data1=" + SelectedPoly.ID, { LatLng: SelectedPoly.GetPolyData() }, function (data) { alert("Done"); });
+        }
+
+        function FindAddress()    // Find lat lng By Address 
+        {
+            geocoder.geocode({ 'address': $("#txtAddress").val() }, function (results, status)
+            {
+                if (status == google.maps.GeocoderStatus.OK)
+                {
+                    map.setCenter(results[0].geometry.location);
+                    var pt = results[0].geometry.location;
+                    PosMarker.setPosition(pt);
+                    SetZoom(15);
+                    $("#txtLat").val(pt.lat());
+                    $("#txtLng").val(pt.lng());
+                }
+            });
+        }
+
+        function SetCenter(Lat, Lng)
+        {
+            var pt = new google.maps.LatLng(parseFloat(Lat), parseFloat(Lng));
+            map.setCenter(pt);
+            PosMarker.setPosition(pt);
+        }
+
+        function Resized()
+        {
+            var H = $(window).height() - 40;
+            $("#map_canvas").height(H);
+        }
+
+        function GetCenter()
+        {
+            var pt = map.getCenter();
+            $("#txtLat").val(pt.lat());
+            $("#txtLng").val(pt.lng());
+            PosMarker.setPosition(pt);
+        }
+
+        function ShowHide()
+        {
+            SelectedPoly.setVisible($("#chkShowHide").prop("checked"));
+        }
+
+        function Save()
+        {
+            $.post("Data.aspx?Action=UpdatePolyPoints", { Points: SelectedPoly.GetPolyData(), Lat: $("#txtLat").val(), Lng: $("#txtLng").val(), ID: SelectedPoly.ID }, function (data)
+            {
+                alert(data);
+            });
+        }
+        var Ctrl = false;
+        jQuery(document).bind('keydown', 'Ctrl+s', function (evt)
+        {
+            Save();
+            return false;
+        });
+
+        jQuery(document).bind('keydown', 'Ctrl', function (evt)
+        {
+            Ctrl = true;
+            return false;
+        });
+
+        jQuery(document).bind('keyup', 'Ctrl', function (evt)
+        {
+            Ctrl = false;
+            return false;
+        });
+</script>
+</head>
+<body style="margin: 0px">
+    <h1 style="font-size: 14px; margin: 0px; display: none">Location</h1>
+    <div id="conrols">
+        <input type="button" value="Find Add" onclick="FindAddress()" />&nbsp;
+    <input type="button" value="GetCenter" onclick="GetCenter()" />
+        <input type="text" value="" id="txtLat" style="width: 50px" />
+        <input type="text" value="" id="txtLng" style="width: 50px" />
+        <input type="text" value="" id="txtAddress" />
+        <input type="button" value="Reset" onclick="SelectedPoly.Reset()" />
+        <input type="checkbox" id="chkCreateArea" />
+        Create Area
+    <input type="checkbox" id="chkShowHide" checked="checked" onclick="ShowHide()" />
+        ShowHide
+    <input type="button" value="Save" onclick="Save()" />
+    </div>
+    <div id="map_canvas" style="width: 100%; height: 300px;"></div>
+</body>
+</html>

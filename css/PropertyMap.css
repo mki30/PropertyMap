@@ -1,0 +1,812 @@
+﻿html, body
+{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    margin: 0 auto;
+    background: white;
+    color: #222;
+    padding-top: 0px !important;
+    padding: 0;
+    height: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: #4285FC;
+}
+
+    #Image1, a:hover
+    {
+        cursor: pointer;
+        color: red;
+    }
+
+h1
+{
+    font-size: medium;
+}
+
+h2
+{
+    font-size: small;
+}
+
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td
+{
+    padding: 0px;
+}
+
+input[type=text], textarea:focus
+{
+    outline: none;
+}
+
+
+.ContentArea
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    /*border-right: 1px solid #e6dfdf;
+    background-color: white;
+    border-color: #333;*/
+}
+
+.ContentAreaRight
+{
+    vertical-align: top;
+    background-color: #333333;
+}
+
+    .ContentAreaRight .Ads
+    {
+        width: 300px;
+        height: 250px;
+    }
+
+@media print
+{
+    .ContentArea
+    {
+        width: 100%;
+        padding: 0px;
+        border-right: 0px;
+        background-color: white;
+        border-color: white;
+    }
+
+    .Ads
+    {
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.ProjectList td
+{
+    width: 33%;
+}
+
+
+/*overrite tab css*/
+
+.ui-tabs-nav
+{
+    margin: 0;
+    padding: 0 .2em 0;
+}
+
+.ui-tabs .ui-tabs-panel
+{
+    padding: 3px 0px;
+}
+
+.ui-widget-header
+{
+    border: 0px;
+    border-bottom: 1px solid #D0D8DA;
+    background: url() 50% 50% repeat-x;
+}
+
+.ui-accordion .ui-accordion-content
+{
+    padding: 1px 1px;
+}
+
+.ui-helper-reset
+{
+    line-height: 1.3;
+    font-size: 11px;
+    list-style: none;
+}
+
+[class^="icon-"], [class*=" icon-"] /*MARGIN  AFTER BOOTSTRAP ICONS*/
+{
+    margin-right: 5px;
+}
+
+/* overrite tab css*/
+
+/*tooltip CSS*/
+.ui-tooltip, .arrow:after
+{
+    background: black;
+    border: 0px solid white;
+}
+
+.ui-tooltip
+{
+    padding: 2px 2px;
+    color: white;
+    border-radius: 2px;
+    font: bold 12px "Helvetica Neue", Sans-Serif;
+    text-transform: capitalize;
+    box-shadow: 0 0 7px black;
+}
+/*tooltip CSS*/
+
+/*jQuery Autocomplete CSS*/
+.ui-corner-all
+{
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.ui-menu
+{
+    border: 2px solid #c4e9fe;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: #edeeee;
+}
+
+    .ui-menu .ui-menu-item a
+    {
+        color: #888;
+    }
+
+    .ui-menu .ui-menu-item:hover
+    {
+        display: block;
+        text-decoration: none;
+        color: #3D3D3D;
+        cursor: pointer;
+        background-color: lightgray;
+        background-image: none;
+        border: 1px solid lightgray;
+    }
+
+.ui-widget-content .ui-state-hover,
+.ui-widget-content .ui-state-focus
+{
+    border: 1px solid lightgray;
+    background-image: none;
+    background-color: lightgray;
+    font-weight: bold;
+    color: #3D3D3D;
+}
+/**/
+/*scroll to top link css*/
+.scrollup
+{
+    width: 40px;
+    height: 60px;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+    text-indent: -9999px;
+    background: url(/Images/move-to-top.gif) no-repeat;
+}
+/**/
+
+.nav-header
+{
+    background-color: gainsboro;
+    margin-left: 10px;
+}
+
+.sub-header
+{
+    font-size: medium;
+    text-align: left;
+    color: #cbc8c8;
+}
+
+.ProjectListHome
+{
+    font-size: 12.5px;
+}
+
+/*Contact us Form  css*/
+.freecontactform
+{
+    width: 100%;
+    /*font-family: arial;*/
+    border: none;
+    padding: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.freecontactformheader
+{
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#A6D1FF), to(white));
+}
+
+.freecontactformmessage
+{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.freecontactform td
+{
+    padding: 4px;
+    font-size: 12px;
+}
+
+.freecontactform p
+{
+    padding: 4px;
+}
+
+.freecontactform label
+{
+    padding: 4px;
+}
+
+.freecontactform label
+{
+    padding-right: 10px;
+}
+
+.required
+{
+    font-weight: bold;
+}
+
+.required_star
+{
+    font-weight: bold;
+    color: #F00;
+}
+
+.tdalign
+{
+    vertical-align: top;
+}
+
+.imgdiv
+{
+    float: left;
+    width: 750px;
+    height: 200px;
+    background: url("../Images/ContactUs.gif");
+    background-repeat: no-repeat;
+}
+
+/*Contact us Form  css*/
+
+.Designer-input
+{
+    padding: 7px 0 7px 10px;
+    height: 14px;
+    width: 400px;
+    border: 1px solid #dadada;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: #e4e4e4 4px 5px 10px inset;
+    -webkit-box-shadow: #e4e4e4 4px 5px 10px inset;
+    -o-box-shadow: #e4e4e4 4px 5px 10px inset;
+    box-shadow: #e4e4e4 4px 5px 10px inset;
+}
+
+/* Simple Login Form */
+body
+{
+    background: #eff3f6;
+}
+/* Simple Login Form */
+
+.edit-head
+{
+    background-color: #6997f5;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.border
+{
+    border: 1px solid #e4e4e4;
+}
+
+.drp2
+{
+    outline: none;
+    border: 1px solid #c4c4c4;
+    width: 120px;
+    height: 20px;
+    font-size: 11px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    box-shadow: 0px 0px 8px #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px #d9d9d9;
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+}
+
+.heading
+{
+    color: #1876B4;
+}
+
+/*End Login Form*/
+
+#tableMain
+{
+    /*border-left: 1px dotted gainsboro;
+    border-right: 1px dotted gainsboro;*/
+    /*width: 1070px;*/
+    margin: auto;
+    background-color: white;
+}
+
+    #tableMain td
+    {
+        vertical-align: top;
+    }
+
+.DataTable
+{
+    width: 100%;
+}
+
+    .DataTable td
+    {
+        padding: 0px;
+        padding-left: 3px;
+        border: 1px dotted gainsboro;
+        text-align: center;
+    }
+
+    .DataTable tr:not(:first-child):hover
+    {
+        background-color: gainsboro;
+    }
+
+    .DataTable tr:first-child
+    {
+        background-color: gainsboro;
+        color: black;
+    }
+
+    .DataTable tr > td:first-child
+    {
+        text-align: left;
+        /*border-left: 1px dotted gray;*/
+    }
+
+#projectmenulist
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+    #projectmenulist li
+    {
+        border-top: 1px solid #e8e6e6;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 4px 0;
+        margin: 0 4px;
+        line-height: 16px;
+    }
+
+        #projectmenulist li a
+        {
+            text-decoration: none;
+            color: black;
+        }
+
+        #projectmenulist li:hover
+        {
+            background-color: #E4E4E4;
+        }
+
+        #projectmenulist li a:hover
+        {
+            color: black;
+        }
+
+.Landmarkul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .Landmarkul li
+    {
+        border-top: 1px solid #e8e6e6;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 4px 0;
+        margin: 0 4px;
+        line-height: 16px;
+    }
+
+        .Landmarkul li a
+        {
+            margin-left: 5px;
+        }
+
+        .Landmarkul li:first-child
+        {
+            background-color: gainsboro;
+        }
+
+#placeholder
+{
+    width: auto;
+    height: 300px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 0px;
+    margin-top: 5px;
+}
+
+.hidden
+{
+    display: none;
+}
+
+p.SocietyDetail
+{
+    margin-bottom: 2px;
+    text-align: justify;
+    line-height: 18px;
+}
+
+    p.SocietyDetail:first-letter
+    {
+        font-size: 18px;
+        padding: 0px;
+    }
+
+    p.SocietyDetail:first-line
+    {
+        line-height: 18px;
+    }
+
+.builderlogo
+{
+    margin-top: 5px;
+    height: 60px;
+    width: 158px;
+    padding: 2px;
+    border: 1px solid #eee;
+}
+
+.projnameandadd
+{
+    padding: 2px;
+    margin: 5px 5px 0px 0px;
+}
+
+    .projnameandadd h1
+    {
+        margin: 0 auto;
+        /*background-color: gainsboro;*/
+    }
+
+    .projnameandadd > div
+    {
+        font-size: 11px;
+    }
+
+.lastUpdated
+{
+    padding: 4px;
+    font-size: smaller;
+    width: 160px;
+}
+
+.projimg
+{
+    height: 100px;
+    min-width: 162px;
+    width: 162px;
+    border: 1px solid #D6D1D1;
+    margin: 0px 0px 5px 0px;
+}
+
+.landmarktable tr:nth-child(2n+1)
+{
+    background-color: #f3f3f3;
+}
+
+.landmakhead
+{
+    background-color: gainsboro;
+    margin: 0px;
+    padding: 1px 1px 1px 4px;
+    font-size: 13px;
+    font-weight: 400;
+    color: black;
+}
+
+    .landmakhead span
+    {
+        float: right;
+        padding-right: 30px;
+    }
+
+.pricetrendhead
+{
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.sidelist
+{
+    background-color: gainsboro;
+    padding: 2px;
+    margin-right: 3px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    width: 160px;
+}
+
+    .sidelist:hover
+    {
+        cursor: pointer;
+        text-decoration: underline;
+        background-color: #e4e4e4;
+    }
+
+
+.fixdivlandmrk
+{
+    height: 225px;
+    overflow: auto;
+    border: 1px solid rgba(0,0,0, 0.1);
+}
+
+.historybox
+{
+    padding-left: 3px;
+}
+
+#comparelink
+{
+    color: #174F82;
+    font-weight: bold;
+}
+
+    #comparelink:hover
+    {
+        text-decoration: underline;
+    }
+
+.hoverpointer:hover
+{
+    cursor: pointer;
+}
+
+#fancybox-content
+{
+    border: 0px solid rgba(148, 148, 148, 0.72);
+}
+
+#tableHistory
+{
+    background-color: #f3f3f3;
+}
+
+    #tableHistory tr
+    {
+        margin: 2px 0px 2px 0px;
+        border-bottom: 1px dotted lightgray;
+    }
+
+        #tableHistory tr:last-child
+        {
+            border: none;
+        }
+
+        #tableHistory tr:nth-child(1)
+        {
+            background-color: gainsboro;
+        }
+
+        #tableHistory tr:nth-child(2)
+        {
+            /*background-color:#c1e9fa;*/
+        }
+
+        /*#tableHistory tr:nth-child(2n+1)
+{
+    background-color:#0d6db6;
+}*/
+
+        #tableHistory tr > td:nth-child(3), #tableHistory tr > td:nth-child(2)
+        {
+            text-align: center;
+        }
+
+        #tableHistory tr > td:nth-child(4)
+        {
+            float: right;
+        }
+
+
+
+.labels
+{
+    color: white;
+    background-color: black;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 0px;
+}
+
+.ProjectListHome td
+{
+    text-align: center !important;
+}
+
+.ProjectListHome th
+{
+    text-align: center !important;
+}
+
+.ProjectListHome tr > td:nth-child(2)
+{
+    width: 150px;
+    text-align: left !important;
+}
+
+    .ProjectListHome tr > td:nth-child(2) > div
+    {
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.ProjectListHome tr > td:nth-child(11)
+{
+    width: 100px;
+    text-align: left;
+}
+
+    .ProjectListHome tr > td:nth-child(11) > div
+    {
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.ProjectListHome tr > td:nth-child(2), .ProjectListHome tr > td:nth-child(4), .ProjectListHome tr > td:nth-child(6), .ProjectListHome tr > td:nth-child(8), .ProjectListHome tr > td:nth-child(10)
+{
+    border-right: #f5f5f5 solid 1px;
+}
+
+.ProjectListHome tr > td:nth-child(6), .ProjectListHome tr > td:nth-child(8), .ProjectListHome tr > td:nth-child(10)
+{
+    /*width: 50px;*/
+}
+
+.ProjectListHome tr > td
+{
+    vertical-align: middle !important;
+}
+
+.ProjectListHome tr:nth-child(odd)
+{
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+    .ProjectListHome tr:nth-child(odd):hover
+    {
+        background-color: gainsboro !important;
+    }
+
+.ProjectListHome tr:first-child
+{
+    background-color: #a1d8f0 !important;
+    font-weight: bold;
+}
+
+.ProjectListHome .price
+{
+    color: red;
+}
+
+.ProjectListHome .area
+{
+    color: blue;
+}
+
+#tableFilterHome td
+{
+    vertical-align: middle !important;
+}
+
+/* serch result table*/
+#divFilterOption
+{
+    position: fixed;
+}
+
+
+#divSearchedResult
+{
+    position: fixed;
+    width: 50%;
+    top: 40px;
+    left: 25%;
+    background-color: #edb83c;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+    #divSearchedResult table
+    {
+        background-color: white !important;
+    }
+
+.divD
+{
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #186caa;
+}
+
+#ProjectReportTable td
+{
+    padding: 2px 5px 2px 0px;
+}
+
+.first
+{
+    margin-left: 0;
+}
+
+#footer
+{
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+}

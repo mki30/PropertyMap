@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!--<script type="text/javascript" src="js/Map.js"></script>-->
+    <script type="text/javascript" src="js/QueryString.js"></script>
+    <script type="text/javascript">
+
+        var geocoder, map, marker;
+        var Lat, Lng;
+
+        $(window).resize(Resized);
+        $(document).ready(function ()
+        {
+            Resized();
+            var q = new QueryString();
+            q.read();
+            Lat = q.getQueryString("Lat");
+            Lng = q.getQueryString("Lng");
+            initialize();
+        });
+
+        function initialize()
+        {
+            geocoder = new google.maps.Geocoder();
+            var Zoom = 10;
+
+            //if ($.cookie("Lat") != null) Lat = parseFloat($.cookie("Lat"));
+            //if ($.cookie("Lng") != null) Lng = parseFloat($.cookie("Lng"));
+            //if ($.cookie("Zoom") != null) Zoom = parseInt($.cookie("Zoom"));
+
+            if (isNaN(Zoom))
+                Zoom = 10;
+
+            var latlng = new google.maps.LatLng(Lat, Lng);
+            var myOptions = {zoom: Zoom, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP, scaleControl: false}
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            marker = new google.maps.Marker({ map: map, position: latlng });
+        }
+
+        function Resized()
+        {
+            var H = $(window).height() - 20;
+            $("#map_canvas").height(H);
+        }
+    </script>
+</head>
+<body>
+    <div id="map_canvas" style="width: 100%; height: 400px">
+    </div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>PropertyMap.in - Map Editor</title>
+    <link rel="stylesheet" type="text/css" href="../css/redmond/jquery-ui-1.8.20.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../css/Simple.css" />
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        span {
+            color: white;
+        }
+        
+        button span,label span {
+            color: #b0b0b0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #tableMain {
+            border-spacing: 0px;
+            text-indent: 0px;
+        }
+
+        #tableMain td {
+                background-color: transparent;
+            }
+
+        #divShapeList td {
+            background-color: white;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        #Footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+            border-top: solid 2px black;
+        }
+
+        #CenterDisplay {
+            position: absolute;
+            bottom: 55px;
+            left: 0;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 5px;
+        }
+
+        #divTop {
+            
+            position: absolute;
+            top: 0px;
+            left: 80px;
+            width:890px;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        #Controls {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width:70px;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        table , td, tr {
+            
+            background-color:transparent;
+        }
+    </style>
+
+    <script type="text/javascript" src="kinetic-v4.0.1.js"></script>
+    <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="CanvasEditor.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="canvasmap.js"></script>
+    <script type="text/javascript">var BasePath = "../";</script>
+</head>
+<body>
+    <span id="info"></span>
+
+    <div id="divTop" >
+    <table id="tableMain" style="width:100%">
+        <tr>
+            <td>
+                <select id="selectStation" style="width: 100%" onchange="LoadStation($(this).val(),true)">
+                    <option value="INDIRAPURAM">Indirapuram</option>
+                    <option value="NOIDA">Noida</option>
+                    <option value="NOIDA-EXT">Noida-Ext</option>
+                    <option value="GREATER-NOIDA">Greater Noida</option>
+                </select>
+            </td>
+            <td style="text-align: center">
+
+                <span id="CommnadButton">
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_NONE)" id="Cmd0" checked="checked" /><label for="Cmd0" title="Pan">Pan</label>
+                    <span>&nbsp;Point</span>
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_MOVE)" id="Cmd5" /><label for="Cmd5" title="Move node">Move</label>
+
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_INSERT)" id="Cmd4" /><label for="Cmd4" title="Insert Node">Insert</label>
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_DELETE)" id="Cmd3" /><label for="Cmd3" title="Delete Node">Delete</label>
+
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_AREA_SELECT)" id="Cmd6" /><label for="Cmd6" title="Select multiple nodes">Select</label>
+
+                    <span>&nbsp;&nbsp;Shape</span>
+
+                    <!--<input type="radio" name="CommnadRadio" onclick="Options(CMD_Shape_SELECT)" id="Cmd7" /><label for="Cmd7">Select</label>-->
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_Shape_MOVE)" id="Cmd8" /><label for="Cmd8" title="Move shape">Move</label>
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_MOVE_NAME)" id="Cmd9" /><label for="Cmd9" title="Move shape name">Name</label>
+                    <input type="radio" name="CommnadRadio" onclick="Options(CMD_Shape_ADD)" id="Cmd11" /><label for="Cmd11" title="Add new shape, after selection click on the canvas to place the new shape">Add</label>
+
+                </span>
+
+                <span>&nbsp;Auto Select</span>
+                <input id="chkAutoSelect" type="checkbox" checked="checked" value="1" title="Auto select shape on mouse up" />
+
+                <span>&nbsp;</span>
+                <span id='spanX'></span>,
+                <span id='spanY'></span>
+
+                <span>&nbsp;X</span>
+                <input id="chkX" type="checkbox" checked="checked" title="Move points in X axis" />
+
+                <span>Y</span>
+                <input id="chkY" type="checkbox" checked="checked" title="Move points in Y axis" />
+
+            </td>
+            <td>
+                <select id="ddShapes" onchange="Options(CMD_Shape_ADD)"></select></td>
+        </tr>
+
+    </table>
+    </div>
+
+    <div id="Controls">
+        <table>
+            <tr>
+                <td style="vertical-align: top; text-align: center" rowspan="2">
+                    <span>Shape</span>
+                    <br />
+                    <button onclick="Save()" title="Save Layout">Save</button><br />
+                    <button onclick="Copy()" title="Copy Shape">Copy</button><br />
+                    <br />
+                    <button onclick="DeleteShape()" title="Delete Shape">Delete</button><br />
+                    <br />
+                    <span>Align</span><br />
+                    <button onclick="Align(ALIGN_LEFT)" title="Align Selected Points to Left">Left</button><br />
+                    <button onclick="Align(ALIGN_TOP)" title="Align Selected Points to Top">Top</button><br />
+                    <br />
+                    <span>Move</span><br />
+                    <button onclick="MoveZIndex(-1)" title="Move Selected Shape Down">Down</button><br />
+                    <button onclick="MoveZIndex(1)" title="Move Selected Shape Up">Up</button><br />
+                    <br />
+                    <span>Rotate</span><br />
+                    Alt+Mouse
+                    <br />
+                    <button onclick="Reset()" title="Reset Zoom & Panning">Reset</button>
+                    <br />
+                    <span>Options</span><br />
+                    <button onclick="SetMapCenter()" title="Set Map Center">Center</button>
+
+                    
+                    <button onclick="ToggleMap()" title="Toggle Map Type">Toggle</button>
+                    
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="divShapeList" style="position:absolute;left:1024px;top:0px; height: 600px; overflow: auto;"></div>
+
+    <div id="Footer">
+        <table>
+            <tr>
+                <td style="text-align: center" id="tdShapeProperties">
+                    <span>Fill</span>
+                    <input type="color" id="txtColor" onchange="UpdateProperty()" style="border: 0px; vertical-align: bottom;" />
+
+                    <span>Opacity</span>
+                    <select id="ddOpacity" onchange="UpdateProperty()">
+                        <option value="1">None</option>
+                        <option value="0.1">10%</option>
+                        <option value="0.2">20%</option>
+                        <option value="0.5">50%</option>
+                    </select>
+
+
+                    <span>Line</span>
+                    <input type="color" id="ddLineColor" onchange="UpdateProperty()" style="border: 0px; vertical-align: bottom;" />
+                    <span>Width</span>
+                    <select id="ddLineWidth" onchange="UpdateProperty()">
+                        <option value="1">1px</option>
+                        <option value="2">2px</option>
+                        <option value="3">3px</option>
+                        <option value="4">4px</option>
+                        <option value="5">5px</option>
+                        <option value="10">10px</option>
+                    </select>
+
+                    <span>Name</span>
+                    <input type="text" id="txtPropName" style="width: 100px" />
+                    <input type="button" onclick="SetNameInCenter()" title="Set Name in center of polygon" value="C" />
+                    <input type="text" id="txtPropShortName" style="width: 150px" />
+
+                    <span>X</span>
+                    <input type="text" id="txtPropX" style="width: 50px" />
+                    <span>Y</span>
+                    <input type="text" id="txtPropY" style="width: 50px" />
+                    <span>Platforms</span>
+                    <input type="number" id="txtPropPlatform" style="width: 50px" />
+                    
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+    <div id="map_canvas" style="width: 1024px; height: 600px; position: absolute; left: 0px; top: 0px;"></div>
+    <div id="canvas_container" style="width: 1024px; height: 600px; z-index: 1000; position: absolute; left: 0px; top: 0px;"></div>
+
+</body>
+</html>

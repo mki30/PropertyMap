@@ -1,0 +1,55 @@
+﻿<!DOCTYPE >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type="text/javascript"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js' type="text/javascript"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="Js/DistanceFinderHelper.js"></script>
+
+    <style type="text/css">
+        input, text
+        {
+            width: 270px;
+            text-wrap: normal;
+        }
+        .auto-style1
+        {
+            width: 283px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server"></form>
+    <div>
+        <table style="width: 100%">
+            <tr>
+                <td style="vertical-align: top; background-color:#C0C0C0" colspan="2">
+                    Lat :<input type="text" id="txtLat" style="width: 100px" />
+                    Lng :<input type="text" id="txtLng" style="width: 100px" />
+                    Distance :<input type="text" id="txtRoadDistance" style="width: 50px"/>
+                    Lndm Type:<select id="SelectLandm">
+                        <option value="0">airport</option>
+                        <option value="1">railstation</option>
+                        <option value="2">school</option>
+                </select>
+                    </td>
+                <td>
+                    <input type="button" value="Update Distance" onclick="UpdateDistance()"/>
+                    <input type="button" value="Get Airports" onclick="GetAirportsFromScript()"/>
+                </td>
+                <tr>
+                    <td style="width: 100px; vertical-align: top"><select id="lstFromList" multiple="multiple" style="width: 283px; height: 500px" onchange="FillToList()"></select></td>
+                <td style="vertical-align: top; width:283px" >
+                    <select id="lstToList" multiple="multiple" style="width: 283px; height: 500px" onchange="FindRoute()"></select></td>
+                <td style="vertical-align: top">
+                    <div id="map_canvas" style="width: 100%; height: 500px"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><div id="divInstruction"></div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Filter Popup</title>
+    <style>
+        body
+        {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            background: white;
+        }
+
+        div:first-child
+        {
+            margin-top: 0px;
+        }
+
+        div
+        {
+            cursor: pointer;
+            text-align: center;
+            padding: 1px 3px;
+            font-family: sans-serif;
+            font-size: 0.8em;
+            width: 100px;
+            margin-top: 1px;
+            background: #cccccc;
+        }
+
+            div:hover
+            {
+                background: #aaaaaa;
+            }
+
+        div
+        {
+            border: 1px solid red;
+            width: 100px;
+        }
+    </style>
+    <script src="jquery-1.8.0.min.js"></script>
+    <script src="popup.js"></script>
+</head>
+<body>
+    <div data-script="CallFillForm()">Fill Form</div>
+    <div data-script="FilterPropertyLinksMagicBrick()">MB -Links</div>
+    <div data-script="ProcessPropertyDetailsMagicBrick()">MB-Detail</div>
+    <div data-script="FilterPropertyLinksIndiaProperty()">IP-Links</div>
+    <div data-script="ProcessPropertyDetailsIndiaProperty()">IP-Details</div>
+    <div data-script="FilterPropertyLinks99Acre()">99-Links</div>
+    <div data-script="ProcessPropertyDetails99Acre()">99-Details</div>
+    <div data-script="FilterPropertyLinksMakaan()">MK-Links</div>
+    <div data-script="ProcessPropertyDetailsMakaan()">MK-Details</div>
+    <div data-script="ProcessProjectDetailsMB()">Project deatil MB</div>
+    <div data-script="FilterSchools()">Filter Schools JD</div>
+    <div data-script="FilterServicesFromJD()">Filter Serv JD</div>
+    <div data-script="FilterProjectsFromMB()">Filter Projects-MB</div>
+    <div data-script="FilterProjectsURLAllCheckDeals()">Filter Projects-ALL Check</div>
+    <div data-script="DownloadProjectsURLAllCheckDeals()">Download Projects-ALL Check</div>
+    <div data-script="FilterBuilderUrlCF()">Filter Builder URL CF</div>
+    <div data-script="DownloadBuilderCF()">Download Builder</div>
+    <div data-script="DownloadPriceTrendMB()">Price Trend</div>
+    <div data-script="ProcessMagicBricksPriceTrends()">MB PT Prcess</div>
+    <div data-script="FilterMBAgents()">MB Agents</div>
+    <div data-script="FilterDealersJd()">Dealers JD</div>
+</body>
+</html>

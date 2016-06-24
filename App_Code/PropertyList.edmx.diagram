@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <edmx:Designer>
+    <edmx:Diagrams>
+      <edmx:Diagram Name="PropertyList" ZoomLevel="65">
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Apartment" Width="1.5" PointX="4.5" PointY="0.5" Height="3.7288216145833326" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.AgentClient" Width="1.5" PointX="8.375" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.PriceList" Width="1.5" PointX="12.125" PointY="4.875" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Landmark" Width="1.5" PointX="4.5" PointY="5.125" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.ApartmentType" Width="1.5" PointX="6.5" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Society" Width="1.5" PointX="0.5" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.PriceTrend" Width="1.5" PointX="14.125" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Distance" Width="1.5" PointX="12.125" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Service" Width="1.5" PointX="19.75" PointY="4.25" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.City" Width="1.5" PointX="8.375" PointY="4.25" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.FloorInfo" Width="1.5" PointX="6.5" PointY="7" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.ClientLinking" Width="1.5" PointX="2.625" PointY="7.875" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.NewsArticle" Width="1.5" PointX="14.125" PointY="8.75" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.AsignClient" Width="1.5" PointX="10.25" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Agent" Width="1.5" PointX="2.625" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.Availability" Width="1.5" PointX="10.25" PointY="3.875" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.ImagesDetail" Width="1.5" PointX="2.625" PointY="10.375" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.ProjectQuestion" Width="1.5" PointX="14.125" PointY="4.875" />
+        <edmx:EntityTypeShape EntityType="PropertyListModel.ProjectPricing" Width="1.5" PointX="6.25" PointY="16.5" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

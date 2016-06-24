@@ -1,0 +1,111 @@
+﻿body
+{
+    background-color:transparent;
+}
+
+table
+{
+  background-color:transparent;
+  border-spacing:3px 3px;
+}
+
+input[type=text]
+{
+    width:200px;
+    height:22px;
+    border-radius:4px;
+    border:1px solid #c7c7c7;  
+}
+
+input[type=submit]
+{
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:15px;
+    background:#a1d8f0;
+    background:-moz-linear-gradient(top, #badff3, #7acbed);
+    background:-webkit-gradient(linear, left top, left bottom, from(#badff3), to(#7acbed));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#badff3', EndColorStr='#7acbed')";
+    border:1px solid #7db0cc !important;
+    cursor: pointer;
+    padding:11px 16px;
+    font:bold 11px/14px Verdana, Tahomma, Geneva;
+    text-shadow:rgba(0,0,0,0.2) 0 1px 0px; 
+    color:#fff;
+    -moz-box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    -webkit-box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    margin-left:4px;
+    float:left;
+	padding:7px 21px;
+    text-align:left;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus,
+input[type=submit]:active
+{
+    background:#a1d8f0;
+    background:-moz-linear-gradient(top, #7acbed, #badff3);
+    background:-webkit-gradient(linear, left top, left bottom, from(#7acbed), to(#badff3));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#7acbed', EndColorStr='#badff3')";
+}
+
+
+.txtsyle
+{
+    width:200px;
+    height:22px;
+    border-radius:4px;
+    border:1px solid #c7c7c7;  
+}
+.multiTxtSyle
+{
+    width:196px;
+    height:80px;
+     border-radius:4px;
+    border:1px solid #c7c7c7; 
+}
+.dropdn
+{
+    border: 1px solid #c4c4c4;
+    /*width: 180px;*/
+    height: 28px;
+    font-size: 13px;
+    padding: 4px 4px 4px 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 0px 8px #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px #d9d9d9;
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+}
+
+.PostPropDrp
+{
+    border: 1px solid #c4c4c4;
+    /*width: 180px;*/
+    height: 28px;
+    font-size: 13px;
+    padding: 4px 4px 4px 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 0px 8px #d9d9d9;
+    -moz-box-shadow: 0px 0px 8px #d9d9d9;
+    -webkit-box-shadow: 0px 0px 8px #d9d9d9;
+}
+
+textarea
+{
+    width:200px;
+    height:50px;
+}
+#editAgent
+{
+   /*background-color:#ff6a00;*/
+}
+.bodyAvailability
+{
+    background-color:transparent;
+}

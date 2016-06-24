@@ -1,0 +1,215 @@
+﻿body
+{
+}
+div, h4, p
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    margin: 0px;
+    font-size: 16px;
+}
+
+#emisum
+{
+    background: none repeat scroll 0pt 0pt #FCFCFC;
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+    #emisum div
+    {
+        padding: 10px 0px 10px 0px;
+        text-align: center;
+        border-top: 1px dotted #934F4F;
+    }
+    
+    #emisum span
+    {
+    color:black;
+    }
+
+    #emisum h4
+    {
+        color: #005891;
+        font-weight: bold;
+    }
+
+table
+{
+    border: 0px solid gray;
+}
+
+    table td
+    {
+    }
+
+    table .second td
+    {
+        padding-top: 10px;
+    }
+
+    table .second, .third td:first-child
+    {
+        vertical-align: top;
+        width: 600px;
+    }
+
+    table .second, .third td:last-child
+    {
+        vertical-align: top;
+        width: 400px;
+    }
+
+
+.ui-widget-content
+{
+    background: black;
+    border-radius: 0px;
+}
+
+.auto-style1
+{
+    height: 26px;
+}
+
+.auto-style2
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    height: 39px;
+}
+
+.auto-style3
+{
+    font-family: 'Droid Serif', serif;
+    font-size: 20px;
+    color: #005399;
+    font-style: italic;
+    padding-left: 40px;
+    height: 39px;
+}
+
+.frmbldtxt
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.text
+{
+    font-family: 'Droid Serif', serif;
+    font-size: 20px;
+    color: #005399;
+    font-style: italic;
+    padding-left: 40px;
+}
+
+.EMICalculation
+{
+    border: 1px solid #dedbdb;
+    background: none repeat scroll 0pt 0pt #FCFCFC;
+    float: left;
+    height: 180px;
+  
+    width: 400px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #005891;
+    font-family: Verdana;
+}
+
+.EMICalculation td
+{
+    text-indent:5px;
+}
+
+.calctabHead
+{
+    font-weight: bold;
+     font-size: 14px; 
+     color: orange; 
+     text-align:left; 
+     border-bottom:1px solid #efe7e7;
+     padding:5px 0px 5px 0px; 
+     margin-bottom:2px;
+}
+.PropertyPrice
+{
+    border: 1px solid #dedbdb;
+    background: none repeat scroll 0pt 0pt #FCFCFC;
+    float: left;
+    height: 180px;
+    margin: 0px 10px 20px 0px;
+    width: 300px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #005891;
+    font-family: Verdana;
+}
+
+.PropertyPrice tr td
+{
+   text-indent:5px;
+   vertical-align:middle !important;
+}
+
+.PropertyPrice input
+{
+    width:100px;
+}
+
+#amortization table
+{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #DEDBDB;
+    background: none repeat scroll 0pt 0pt #FCFCFC;
+    margin: 0pt 10px 20px 0pt;
+    border-collapse: collapse;
+}
+
+    #amortization table tr:nth-child(2n+1)
+    {
+        background-color: #E4E4E4;
+    }
+
+    #amortization table tr:first-child
+    {
+        background-color: #4b87ba;
+    }
+
+    #amortization table tr td
+    {
+        padding: 5px 0px 5px 0px;
+    }
+
+.emicaltxt
+{
+    width: 80px;
+}
+
+#tableFloorPlans
+{
+}
+
+#tableFloorPlans input[type="text"], #ddlAmtperc
+{
+    border: 1px solid #DDD;
+    background: none repeat scroll 0% 0% #FCFCFC;
+    box-shadow: 1px 1px 4px #f4f4f4 inset;
+    font-size: 13px;
+    padding: 4px;
+}

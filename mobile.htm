@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title id="PageTitle">Property Map</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Loking For New Property? Welcome to our new site. Here Find Thousands of Properties ,View Complete information of new Projects-coplete price list,floor plans,layout plans,location in map,property price-trend information graph,calculate emi." />
+    <meta name="keywords" content="india property,property sites,India Real Estate,residential properties in india,residential projects in india,buy property in india,Apartment for Sale,studio apartment,investment in india property,builder information, apartment list, projects in gurgaon,projects in noida,noida extension projects,noida extension,projects in noida,projects in ghaziabad,2 bhk flats in noida,2 bhk flats in noida extention,2 bhk flats in gurgaon" />
+    <link rel="shortcut icon" type="image/x-icon" href="Images/icons/home16x16.png" />
+    <link rel="shortcut icon" sizes="196x196" href="Images/icons/home256x256.png">
+    <link rel="shortcut icon" sizes="128x128" href="Images/icons/home128x128.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="Images/icons/home128x128.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="Images/icons/home128x128.png">
+    <link type="text/css" href="/m/css/jquery.mobile-1.4.0.css" rel="stylesheet" />
+    <link href="/m/PW/photoswipe.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/m/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).bind('load', function ()
+        {
+            $("#Gallery a.Swipe").photoSwipe();
+        });
+    </script>
+    
+    <style type="text/css">
+        .rent
+        {
+            background-color: #fac68f;
+        }
+        .bath
+        {
+            background-color: #92dbf7;
+        }
+        .area
+        {
+            background-color: #87d5c5;
+        }
+        .bed
+        {
+            background-color: #fae79c;
+        }
+        #BuilderDetails a
+        {
+            white-space:normal;
+        }
+        #Details a
+        {
+            white-space:normal;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        //BasePath 
+    </script>
+    <div id="Home" data-role="page">
+        <!--Home-->
+        <div data-role="content">
+            <!--<select id="SelectUserType" onchange="UpdateUserOptions()" data-label="I'm:">
+                <option value="1">Tenant</option>
+                <option value="2">Agent</option>
+                <option value="3">Owner</option>
+                <option value="4">Seller</option>
+                <option value="5">Buyer</option>
+            </select>-->
+            <select id="selectCity" data-label="City: " data-mini="true">
+                <option value="0">Near By</option>
+                <option value="1">Ghaziabad</option>
+                <option value="4">Noida</option>
+                <option value="392">Greater Noida</option>
+                <option value="173">Gurgaon</option>
+            </select>
+            <select id="SelectBudget" data-label="Budget: " data-mini="true">
+                <option value="0">All</option>
+                <option value="1">20-40</option>
+                <option value="2">41-60</option>
+                <option value="3">61-80</option>
+                <option value="4">81-100</option>
+            </select>
+            <select id="selectBHK" data-label="BHK: " data-mini="true">
+                <option value="0">All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <!--<a href="#" id="UserAction1" data-role="button" onclick="RunCommand(CMD_FindProperty)" data-inline="true">Find</a>
+            <a href="#" id="UserAction2" data-role="button" onclick="RunCommand(CMD_PostProperty)" data-inline="true"  style="display: none">Post</a>
+            <a href="#" data-role="button" onclick="ClearLocalStoreage();" data-inline="true">Rest</a>-->
+            <a href="#" data-role="button" data-mini="true" onclick="RunCommand(CMD_FindProjects)" class="ui-btn ui-mini ui-icon-search ui-btn-icon-right ui-corner-all ui-shadow ui-btn-active">Find</a>
+            <div id="divFavoriteList">
+            </div>
+        </div>
+    </div>
+
+    <div id="Projects" data-role="page">
+        <div data-role="header">
+            <h1>Projects</h1>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div data-role="content">
+            <div id="divProjectList">
+                Loading...
+            </div>
+        </div>
+    </div>
+    
+    <div id="Details" data-role="page">
+        <div data-role="header">
+            <h1>[PROJECT_TITLE]</h1>
+            <a href="/" target="_self" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div id="ProjectDetails">
+            Loading Project Detail...
+        </div>
+    </div>
+
+    <div id="BuilderDetails" data-role="page">
+        <div data-role="header">
+            <h1>Builder Details</h1>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div id="divBuilderDetails">
+            Loading Builder Detail...
+        </div>
+    </div>
+
+    <div data-role="popup" id="PropertyFilter" data-theme="a" style="min-width: 150px; padding: 5px;">
+        <select id="selectRent" data-label="Rent:">
+            <option value="0">Any</option>
+            <option value="1"><5k</option>
+            <option value="2">5k-10k</option>
+            <option value="3">10k-15k</option>
+            <option value="4">15k-20k</option>
+            <option value="5">20k-25k</option>
+            <option value="6">25k</option>
+        </select>
+        <a data-role="button" onclick="FilterProperty()" data-inline="true">Go</a>
+        <a data-role="button" onclick="ClosePopup('#PropertyFilter')" data-inline="true">Cancel</a>
+    </div>
+
+    <div data-role="popup" id="sure" style="padding: 5px; max-width: 150px;" data-theme="a">
+        <h3>Are You Sure?</h3>
+        <p class="sure-2">On clicking "Clear" will remove your whole Favorite list !</p>
+        <a href="#" data-role="button" onclick="ClearList()" data-theme="a">Clear</a>
+        <a href="#" data-role="button" onclick="CancelConfirm()" data-theme="a">Cancel</a>
+    </div>
+
+    <div id="Rent" data-role="page">
+        <!--Rent/SocietyList-->
+        <div data-role="header" data-position="fixed">
+            <h1 id="RentHeader">Rent</h1>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div id="divSociety" data-role="content">
+            Loading...
+        </div>
+    </div>
+
+    <div id="SocietyList" data-role="page">
+        <!--Property List-->
+        <div data-role="header" data-position="fixed">
+            <h1 id="SocietyListHeader"></h1>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+            <a href="#" data-icon="search" onclick="ShowPopup('#PropertyFilter')">Filter</a>
+        </div>
+        <div id="divSocietyList" data-role="content">
+            Loading...
+        </div>
+    </div>
+
+    <div id="divPropertyOptions" data-role="popup" class="ui-content" style="padding: 7px; max-width: 180px; min-width: 180px" data-theme="a">
+        <a data-role="button" data-mini="true" onclick="GetAgentDetails()">Agent </a>
+        <a data-role="button" data-mini="true" onclick="ShowAvailabilityDetail()">Property </a>
+        <a data-role="button" data-mini="true" onclick="ShowMap()">Map </a>
+        <div id="divFavoriteButton"></div>
+        <a href="#" id="PropertyOptionsCall" data-role="button" data-mini="true" data-icon="email"><span style="float: right">Call</span></a>
+        <div id="divPropertyOptionDetails"></div>
+    </div>
+
+    <div id="divSocietyDetail" data-role="popup" class="ui-content" data-theme="e">
+        <div id="divSocietyDetails"></div>
+    </div>
+
+    <!--<div id="SocietyDetail" data-role="page">
+        <div data-role="header" >
+            <h2>Property List -Apts</h2>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div id="divSocietyDetail" data-role="content" style="padding: 5px;">
+            Loading...
+        </div>
+    </div>-->
+
+    <div id="buy" data-role="page">
+        <div data-role="header">
+            <h1>Property List -Buy</h1>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div data-role="content">
+            Buy Property
+        </div>
+    </div>
+
+    <div id="Post" data-role="page">
+        <div data-role="header">
+            <h1>Post</h1>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div data-role="content">
+            <select id="SocietySelect_Post" data-label="Society: ">
+            </select>
+            <input type="text" id="name_post" placeholder="Name" required="required" />
+            <input type="text" id="mobile_post" placeholder="Mobile" required="required" />
+            <input type="text" id="rent_post" placeholder="Rent" required="required" />
+            <input type="text" id="area_post" placeholder="Area" required="required" />
+
+            <select id="bhk_post" data-label="BHK:">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <select id="bath_post" data-label="Bath: ">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="button" value="Post" onclick="PostAvailibility()" />
+        </div>
+    </div>
+
+    <div id="propertydetail" data-role="page">
+        <div data-role="header">
+            <h2>Property List -Agent</h2>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div data-role="content" style="padding: 5px;">
+            <div id="divAgentDetail"></div>
+            <div id="divPropertyDetail"></div>
+            <div id="divUpdateFavorite"></div>
+        </div>
+    </div>
+
+    <div id="Map" data-role="page">
+        <div data-role="header">
+            <h2>Property List -Availability</h2>
+            <a href="#Home" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <div id="divmap" data-role="content" style="width: 100%; height: 100%; padding: 0px;">
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="/m/js/jquery.mobile-1.4.0.js"></script>
+<script type="text/javascript" src="/m/PW/simple-inheritance.min.js"></script>
+<script type="text/javascript" src="/m/PW/code-photoswipe-1.0.11.min.js"></script>
+<!--<script src="/m/PW/code.photoswipe.jquery-3.0.4.min.js"></script>-->
+<script type="text/javascript" src="/m/js/PLMobile.js"></script>
+<script type="text/javascript" src="/m/js/Common.js"></script>
+<script>
+    //customscript
+</script>
+</html>
+
+

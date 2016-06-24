@@ -1,0 +1,20 @@
+{
+  "name": "PM",
+  "version":"2.1", 
+  "manifest_version": 2,
+  
+   "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*./*"],
+      "js": ["jquery-1.8.0.min.js", "myscript.js"]
+    }
+  ],
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "default_title": "PM",
+      "default_icon": "Propertylist.ico",
+      "default_popup": "popup.html"
+  }
+  }
